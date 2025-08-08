@@ -1,0 +1,44 @@
+<p>Burp InsertionPoint Injector is a BurpSuite extension that allows pentesters to define targets within non-standard locations such as encoded
+regions or serialized data. For instance, potential payload insertion points within encoded cookies that would not normally be targeted by the scanner can be identified and targeted, improving scan coverage.</p>
+
+<h2>Features</h2>
+
+<p>Burp InsertionPoint Injector registers itself as a scan insertion point provider using the BurpSuite API. Consequently, the scanner will present
+requests to Burp Injector to determine if there are any available insertion points. The extension then matches the
+request with any rules defined by the tester and provides insertion points to the scanner, facilitating payload
+insertions.</p>
+
+<p>The extension provides three targeting methods:</p>
+<ul>
+<li><strong>Auto:</strong> Targets using pre-canned regexes that match JSON, XML, and key-value pairs.</li>
+<li><strong>Custom Auto:</strong> Pentesters can create a custom regex similar to auto target. While a name and value capture group can be provided, the extension will supply a name if one isnt provided.</li>
+<li><strong>Regex:</strong> Allows targeting specific areas where one single regex is not ideal.</li>
+</ul>
+
+<h2>Usage</h2>
+
+<p>Burp Injector uses python to handle encoded, serialized, encrypted, or signed target regions. There are three types of scripts you can provide via Burp Injector:</p>
+
+<ul>
+<li><strong>Decode Script:</strong> Decodes the target region where the targets exist.</li>
+<li><strong>Encode Script:</strong> Re-encodes the target region after a payload is inserted.</li>
+<li><strong>Payload processing script:</strong> Processes a payload prior to insertion.</li>
+</ul>
+
+<p>Heres an example script to Base64 decode and encode a target region:</p>
+
+<pre><code class=Code>
+# decoder script used to decode a region
+import base64
+def decode_target(target: str) -&gt; str:
+\tdecoded_target = base64.b64decode(target.encode(utf-8)).decode(utf-8)
+\treturn decoded_target
+
+# encoder script used to re-encode a region
+import base64
+def encode_target(target: str) -&gt; str:
+\tencoded_target = base64.b64encode(target.encode(utf-8)).decode(utf-8)
+\treturn encoded_target
+</code></pre>
+
+<p>To create an injection rule, simply navigate to the target site, sign in, locate the appropriate request, send it to the injector, create a rule, specify the regex, enable the rule, and run the scanner.</p>

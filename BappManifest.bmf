@@ -1,0 +1,13 @@
+Uuid: 19341d76802446c2959b25d0d83f7858
+ExtensionType: 1
+Name: InsertionPoint Injector
+RepoName: insertion-point-injector
+ScreenVersion: 1.0.5
+SerialVersion: 1
+MinPlatformVersion: 0
+ProOnly: False
+Author: softwaresecured
+ShortDescription: Allows penetration testers to target non-standard locations such as encoded regions or serialized data for payload insertion, thus improving scan coverage in BurpSuite.
+EntryPoint: target_repo.jar
+BuildCommand: ./gradlew build test
+SupportedProducts: Pro, Community
