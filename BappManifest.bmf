@@ -3,7 +3,7 @@ ExtensionType: 1
 Name: InsertionPoint Injector
 RepoName: insertion-point-injector
 ScreenVersion: 1.0.5
-SerialVersion: 4
+SerialVersion: 5
 MinPlatformVersion: 19
 ProOnly: False
 Author: softwaresecured
