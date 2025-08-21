@@ -17,7 +17,7 @@ insertions.</p>
 
 <h2>Usage</h2>
 
-<p>Burp Injector uses python to handle encoded, serialized, encrypted, or signed target regions. There are three types of scripts you can provide via Burp Injector:</p>
+<p>Burp Injector uses Python to handle encoded, serialized, encrypted, or signed target regions. There are three types of scripts you can provide via Burp Injector:</p>
 
 <ul>
 <li><strong>Decode Script:</strong> Decodes the target region where the targets exist.</li>
@@ -28,17 +28,18 @@ insertions.</p>
 <p>Heres an example script to Base64 decode and encode a target region:</p>
 
 <pre><code class=Code>
-# decoder script used to decode a region
+# decoder script used to decode a region of text from a targeting rule
 import base64
-def decode_target(target: str) -&gt; str:
-\tdecoded_target = base64.b64decode(target.encode(utf-8)).decode(utf-8)
-\treturn decoded_target
+def decode_target( target: str ) -> str:
+	decoded_target = base64.b64decode(target.encode("utf-8")).decode("utf-8")
+	return decoded_target
 
-# encoder script used to re-encode a region
+
+# encoder script used to encode a region of text from a targeting rule after the alteration has been injected
 import base64
-def encode_target(target: str) -&gt; str:
-\tencoded_target = base64.b64encode(target.encode(utf-8)).decode(utf-8)
-\treturn encoded_target
+def encode_target( target: str ) -> str:
+	encoded_target = base64.b64encode(target.encode("utf-8")).decode("utf-8")
+	return encoded_target
 </code></pre>
 
 <p>To create an injection rule, simply navigate to the target site, sign in, locate the appropriate request, send it to the injector, create a rule, specify the regex, enable the rule, and run the scanner.</p>
