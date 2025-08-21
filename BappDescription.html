@@ -27,15 +27,13 @@ insertions.</p>
 
 <p>Heres an example script to Base64 decode and encode a target region:</p>
 
-<pre class="pre-wrap"><code class=Code>
-# decoder script used to decode a region of text from a targeting rule
+<pre class="pre-wrap"><code class=Code># decoder script used to decode a region of text from a targeting rule
 import base64
 def decode_target( target: str ) -> str:
     decoded_target = base64.b64decode(target.encode("utf-8")).decode("utf-8")
     return decoded_target
-</code></pre>
+    
 
-<pre class="pre-wrap"><code class=Code>
 # encoder script used to encode a region of text from a targeting rule after the alteration has been injected
 import base64
 def encode_target( target: str ) -> str:
