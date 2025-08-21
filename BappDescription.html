@@ -11,7 +11,7 @@ insertions.</p>
 <p>The extension provides three targeting methods:</p>
 <ul>
 <li><strong>Auto:</strong> Targets using pre-canned regexes that match JSON, XML, and key-value pairs.</li>
-<li><strong>Custom Auto:</strong> Pentesters can create a custom regex similar to auto target. While a name and value capture group can be provided, the extension will supply a name if one isnt provided.</li>
+<li><strong>Custom Auto:</strong> Pentesters can create a custom regex similar to auto target. While a name and value capture group can be provided, the extension will supply a name if one isn't provided.</li>
 <li><strong>Regex:</strong> Allows targeting specific areas where one single regex is not ideal.</li>
 </ul>
 
@@ -31,16 +31,16 @@ insertions.</p>
 # decoder script used to decode a region of text from a targeting rule
 import base64
 def decode_target( target: str ) -> str:
-&nbsp;&nbsp;&nbsp;&nbsp;decoded_target = base64.b64decode(target.encode("utf-8")).decode("utf-8")
-&nbsp;&nbsp;&nbsp;&nbsp;return decoded_target
+    decoded_target = base64.b64decode(target.encode("utf-8")).decode("utf-8")
+    return decoded_target
 </code></pre>
 
-<pre class="pre-wrap"><code class=Code></code>
+<pre class="pre-wrap"><code class=Code>
 # encoder script used to encode a region of text from a targeting rule after the alteration has been injected
 import base64
 def encode_target( target: str ) -> str:
-&nbsp;&nbsp;&nbsp;&nbsp;encoded_target = base64.b64encode(target.encode("utf-8")).decode("utf-8")
-&nbsp;&nbsp;&nbsp;&nbsp;return encoded_target
+    encoded_target = base64.b64encode(target.encode("utf-8")).decode("utf-8")
+    return encoded_target
 </code></pre>
 
 <p>To create an injection rule, simply navigate to the target site, sign in, locate the appropriate request, send it to the injector, create a rule, specify the regex, enable the rule, and run the scanner.</p>
