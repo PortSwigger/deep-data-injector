@@ -3,8 +3,8 @@ ExtensionType: 1
 Name: InsertionPoint Injector
 RepoName: insertion-point-injector
 ScreenVersion: 1.0.5
-SerialVersion: 1
-MinPlatformVersion: 0
+SerialVersion: 2
+MinPlatformVersion: 19
 ProOnly: False
 Author: softwaresecured
 ShortDescription: Target non-standard locations, such as encoded regions or serialized data, for payload insertion in scans.
