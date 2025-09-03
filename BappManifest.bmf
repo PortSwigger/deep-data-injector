@@ -1,7 +1,7 @@
 Uuid: 19341d76802446c2959b25d0d83f7858
 ExtensionType: 1
-Name: InsertionPoint Injector
-RepoName: insertion-point-injector
+Name: Deep Data Injector
+RepoName: deep-data-injector
 ScreenVersion: 1.0.5
 SerialVersion: 7
 MinPlatformVersion: 19
