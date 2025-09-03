@@ -2,8 +2,8 @@ Uuid: 19341d76802446c2959b25d0d83f7858
 ExtensionType: 1
 Name: Deep Data Injector
 RepoName: deep-data-injector
-ScreenVersion: 1.0.5
-SerialVersion: 7
+ScreenVersion: 1.0.6
+SerialVersion: 8
 MinPlatformVersion: 19
 ProOnly: False
 Author: softwaresecured
